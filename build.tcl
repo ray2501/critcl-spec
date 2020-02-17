@@ -1,8 +1,8 @@
 #!/usr/bin/tclsh
 
 set arch "x86_64"
-set base "critcl-3.1.17"
-set fileurl "https://github.com/andreas-kupries/critcl/archive/3.1.17.tar.gz"
+set base "critcl-3.1.18"
+set fileurl "https://github.com/andreas-kupries/critcl/archive/3.1.18.tar.gz"
 
 set var [list wget $fileurl -O $base.tar.gz]
 exec >@stdout 2>@stderr {*}$var
