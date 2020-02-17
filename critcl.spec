@@ -1,3 +1,5 @@
+%{!?directory:%define directory /usr}
+
 Name:           critcl
 Version:        3.1.18
 Summary:        Compiled Runtime In Tcl
@@ -49,7 +51,11 @@ tclsh ./build.tcl install %{buildroot}/usr/lib64/tcl
 %files devel
 %defattr(-,root,root)
 %_libdir/tcl/*
-/usr/include/critcl_callback/*
+%{directory}/include/critcl_callback
+%{directory}/include/critcl_callback/callback.h
+%{directory}/include/critcl_callback/critcl_callback.decls
+%{directory}/include/critcl_callback/critcl_callbackDecls.h
+%{directory}/include/critcl_callback/critcl_callbackStubLib.h
 
 %changelog
 
