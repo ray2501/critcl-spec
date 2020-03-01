@@ -1,7 +1,7 @@
 %{!?directory:%define directory /usr}
 
 Name:           critcl
-Version:        3.1.18
+Version:        3.1.18.1
 Summary:        Compiled Runtime In Tcl
 Release:        0
 License:        TCL
