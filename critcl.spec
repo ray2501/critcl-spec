@@ -1,17 +1,16 @@
 %{!?directory:%define directory /usr}
 
 Name:           critcl
-Version:        3.1.18.1
+Version:        3.2
 Summary:        Compiled Runtime In Tcl
 Release:        0
 License:        TCL
 Group:          Development/Libraries/Tcl
 Url:            https://github.com/andreas-kupries/critcl
-BuildRequires:  tcl >= 8.5
+BuildRequires:  tcl >= 8.6
 BuildRequires:  tcllib
 BuildRequires:  gcc
 Source:         %{name}-%{version}.tar.gz
-Patch0:         build.patch
 BuildRoot:      %{_tmppath}/%{name}-%{version}-build
 
 %description
@@ -33,15 +32,12 @@ This package contains the files needed to compile programs.
 
 %prep
 %setup -q
-%patch0
 
 %build
 
 %install
-export TCLLIBPATH=" %{buildroot}/usr/lib64/tcl/critcl-app3.1.18 %{buildroot}/usr/lib64/tcl/critcl3.1.18 \
-%{buildroot}/usr/lib64/tcl/dict841 %{buildroot}/usr/lib64/tcl/lassign841.0.1 \
-%{buildroot}/usr/lib64/tcl/lmap841"
-tclsh ./build.tcl install %{buildroot}/usr/lib64/tcl
+export TCLLIBPATH=" %{buildroot}/usr/lib64/tcl/critcl-app3.2 %{buildroot}/usr/lib64/tcl/critcl3.2"
+tclsh ./build.tcl install --dest-dir %{buildroot}  --lib-dir /usr/lib64/tcl
 
 %files
 %defattr(-,root,root)
