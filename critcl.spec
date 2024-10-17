@@ -1,7 +1,7 @@
 %{!?directory:%define directory /usr}
 
 Name:           critcl
-Version:        3.2
+Version:        3.3.1
 Summary:        Compiled Runtime In Tcl
 Release:        0
 License:        TCL
@@ -48,10 +48,6 @@ tclsh ./build.tcl install --dest-dir %{buildroot}  --lib-dir /usr/lib64/tcl
 %defattr(-,root,root)
 %_libdir/tcl/*
 %{directory}/include/critcl_callback
-%{directory}/include/critcl_callback/callback.h
-%{directory}/include/critcl_callback/critcl_callback.decls
-%{directory}/include/critcl_callback/critcl_callbackDecls.h
-%{directory}/include/critcl_callback/critcl_callbackStubLib.h
 
 %changelog
 
